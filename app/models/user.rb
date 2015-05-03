@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  has_many :microposts
+
   before_create :generate_authentication_token
 
   def generate_authentication_token
