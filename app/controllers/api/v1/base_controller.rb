@@ -1,5 +1,7 @@
 class Api::V1::BaseController < ApplicationController
 
+  include Pundit
+
   attr_accessor :current_user
   
   # disable the CSRF token
@@ -7,6 +9,8 @@ class Api::V1::BaseController < ApplicationController
 
   # disable cookies (no set-cookies header in response)
   before_action :destroy_session
+
+  rescue_from Pundit::NotAuthorizedError, with: :deny_access
 
   def destroy_session
     request.session_options[:skip] = true
@@ -31,6 +35,10 @@ class Api::V1::BaseController < ApplicationController
 
   def unauthenticated!
     api_error(status: 401)
+  end
+
+  def deny_access
+    api_error(status: 403)
   end
   
 end
