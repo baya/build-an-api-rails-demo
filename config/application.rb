@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+require 'rack/redis_throttle'
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -24,5 +26,9 @@ module BuildAnApiRailsDemo
     config.active_record.raise_in_transactional_callbacks = true
 
     config.autoload_paths << Rails.root.join('app/policies')
+
+    # 为了测试我们把 limit 设置为 3
+    config.middleware.use Rack::RedisThrottle::Daily, max: 3
+    
   end
 end
