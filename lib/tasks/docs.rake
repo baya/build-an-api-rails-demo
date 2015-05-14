@@ -1,0 +1,2 @@
+namespace :docs do
+end

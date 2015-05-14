@@ -94,6 +94,7 @@ GEM
     pundit (1.0.0)
       activesupport (>= 3.0.0)
     rack (1.6.0)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-throttle (0.4.0)
@@ -173,6 +174,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   pundit
+  rack-cors
   rails (= 4.2.0)
   redis-throttle!
   sass-rails (~> 5.0)

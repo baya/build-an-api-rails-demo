@@ -47,3 +47,5 @@ gem 'pundit'
 gem 'kaminari'
 
 gem 'redis-throttle', git: 'git://github.com/andreareginato/redis-throttle.git'
+
+gem 'rack-cors'
