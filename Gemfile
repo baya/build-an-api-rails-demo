@@ -41,6 +41,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'rspec-rails'
 end
 
 gem 'pundit'
@@ -49,3 +51,11 @@ gem 'kaminari'
 gem 'redis-throttle', git: 'git://github.com/andreareginato/redis-throttle.git'
 
 gem 'rack-cors'
+
+gem 'responders'
+
+gem 'awesome_print'
+
+gem 'database_cleaner'
+
+

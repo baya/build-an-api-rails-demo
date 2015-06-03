@@ -28,7 +28,7 @@ module BuildAnApiRailsDemo
     config.autoload_paths << Rails.root.join('app/policies')
 
     # 为了测试我们把 limit 设置为 3
-    config.middleware.use Rack::RedisThrottle::Daily, max: 3
+    config.middleware.use Rack::RedisThrottle::Daily, max: 10000
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do

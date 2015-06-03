@@ -1,5 +1,7 @@
 class Api::V1::BaseController < ApplicationController
 
+  respond_to :json
+
   include Pundit
 
   attr_accessor :current_user

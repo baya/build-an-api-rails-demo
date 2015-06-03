@@ -5,7 +5,10 @@ class Api::V1::UsersController < Api::V1::BaseController
   def show
     @user = User.find(params[:id])
 
+    Rails.logger.info("---------------------#{@user.inspect}")
+
     # render(json: Api::V1::UserSerializer.new(user).to_json)
+    # render json: @user.to_json
   end
 
   def update
